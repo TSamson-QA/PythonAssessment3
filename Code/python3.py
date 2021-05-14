@@ -34,7 +34,19 @@
 	# Use help(str) on your CLI for more information.
 
 def one(input):
-	return "null"
+	odd = []
+	list_ = input.split(",")
+	for n in list_:
+		if int(n) % 2 != 0:
+			odd.append(n)
+				
+	odd_str = ','.join(odd)
+
+	if odd_str == "":
+		return "null"
+	
+	return odd_str
+
 
 	# <QUESTION 2>
 
@@ -52,7 +64,9 @@ def one(input):
 	# How did we check if an entry was NOT IN a list?
 
 def two(input):
-	return []
+	input = list(dict.fromkeys(input))
+	return input
+
 
 	# <QUESTION 3>
 
@@ -68,7 +82,8 @@ def two(input):
 	# How do we choose only the odd numbers when using range()?
 
 def three(input):
-	return ""
+	return input [1::2]
+
 
 	# <QUESTION 4>
 
@@ -87,7 +102,13 @@ def three(input):
 	# What function do we use to get a list from a string? Use help(str) on your CLI for more information.
 
 def four(arg1):
-	return 0
+	text_ = arg1.lower()
+	split_text = text_.split
+	count_ = 0
+	for n in split_text:
+		if n == 'am ':
+			count_ += 1
+	return count_
 
 	# <QUESTION 5>
 
@@ -133,7 +154,15 @@ def five(input):
 	# How can you split the email address up? Use help(str) on your CLI for more information.
 
 def six(email, parameter):
-	return ""
+	email = email.lower()
+	new_email = email.replace(".com", "")
+	split_ = new_email.split("@")
+	if parameter == "person":
+		return split_[0]
+	elif parameter == "company":
+		return split_[1]
+	else:
+		return ""
 
 	# <QUESTION 7>
 
@@ -198,6 +227,7 @@ def eight(n):
 	# If we have the right number of legs, do we have the right number of heads?
 
 def nine(heads,legs):
+	
 	return "no solutions"
 
 	# <QUESTION 10>
@@ -216,4 +246,7 @@ def nine(heads,legs):
 	# Use help(list) on your CLI for more information.
 
 def ten(input):
-	return ""
+	list_ = input.split(',')
+	list_.sort()
+	str_sort = ','.join(list_)
+	return str_sort
